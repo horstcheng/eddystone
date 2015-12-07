@@ -26,6 +26,7 @@ static NSString *const kEddystoneServiceID = @"FEAA";
  * values. See the Eddystone spec for complete details.
  */
 static const uint8_t kEddystoneUIDFrameTypeID = 0x00;
+static const uint8_t kEddystoneURLFrameTypeID = 0x10;
 static const uint8_t kEddystoneTLMFrameTypeID = 0x20;
 
 // Note that for these Eddystone structures, the endianness of the individual fields is big-endian,
@@ -127,6 +128,8 @@ static inline BOOL IsEqualOrBothNil(id a, id b) {
         return kESSEddystoneUIDFrameType;
       } else if (frameType == kEddystoneTLMFrameTypeID) {
         return kESSEddystoneTelemetryFrameType;
+      } else if (frameType == kEddystoneURLFrameTypeID){
+          return kEddystoneURLFrameTypeID;
       }
     }
   }
